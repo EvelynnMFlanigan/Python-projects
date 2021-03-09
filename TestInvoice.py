@@ -15,7 +15,7 @@ def invoice():
     return invoice
 
 
-def test_CanCalculateTotalImpurePrice(invoice,products):
+def test_CanCalculateTotalImpurePrice(invoice, products):
     invoice.totalImpurePrice(products)
     assert invoice.totalImpurePrice(products) == 75
 
@@ -28,3 +28,12 @@ def test_CanCalculateTotalDiscount(invoice, products):
 def test_CanCalculateTotalPurePrice(invoice, products):
     invoice.totalPurePrice(products)
     assert invoice.totalPurePrice(products) == 69.38
+
+
+def test_canCalcAveragePrice(invoice, products):
+    invoice.averagePrice(products)
+    assert invoice.averagePrice(products) == 4.63
+
+def test_canFindHighestPrice(invoice, products):
+    invoice.highestItemPrice(products)
+    assert  invoice.highestItemPrice(products) == 7.5

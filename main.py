@@ -1,4 +1,4 @@
-from Invoice import  Invoice
+from Invoice import Invoice
 
 products = {}
 total_amount = 0
@@ -15,5 +15,8 @@ while True:
         break
 
 total_amount = Invoice().totalImpurePrice(products)
-
+average = Invoice().averagePrice(products)
+high = Invoice().highestItemPrice(products)
 print("your total pure price is: ", total_amount)
+print("The average price per item is:  " + str(average))
+print(high)
